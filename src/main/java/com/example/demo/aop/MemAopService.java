@@ -13,6 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class MemAopService {
 
+//    Around for AOP start
+//    Before for AOP, Url is:http://localhost:8888/aopDemo; method is:aopDemo
+//    process /aopDemo request in controller...
+//    AfterReturning for AOP, return value is:aopDemo
+//    After for AOP, mem usage is:160M
+//    Around for AOP end, proceed args, result is: aopDemo
     //定义切点
     @Pointcut("execution(* com.example.demo.aop.controller.*.*(..))")
     private void checkMem() {

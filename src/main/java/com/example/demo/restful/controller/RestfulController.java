@@ -4,9 +4,9 @@ import com.example.demo.restful.exception.ParamException;
 import com.example.demo.restful.model.Stock;
 import com.example.demo.restful.tool.HttpCodeEnum;
 import com.example.demo.restful.tool.HttpReturn;
-//import io.swagger.annotations.ApiOperation;
-//import io.swagger.annotations.ApiResponse;
-//import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -20,13 +20,13 @@ public class RestfulController {
 
     //根据ID找Stock
     @RequestMapping( value = "/stock/{id}",method = RequestMethod.GET)
-//    @ApiOperation(value="Get the Stock By ID", notes="id need less than 100")
-//    @ApiResponses({
-//            @ApiResponse(code=200,message="请求正确"),
-//            @ApiResponse(code=400,message="参数错误"),
-//            @ApiResponse(code=404,message="页面没找到"),
-//            @ApiResponse(code=500,message="服务错误")
-//    })
+    @ApiOperation(value="Get the Stock By ID", notes="id need less than 100")
+    @ApiResponses({
+            @ApiResponse(code=200,message="请求正确"),
+            @ApiResponse(code=400,message="参数错误"),
+            @ApiResponse(code=404,message="页面没找到"),
+            @ApiResponse(code=500,message="服务错误")
+    })
     public HttpReturn getStockByID(@PathVariable Integer id) {
         //如果id大于100，则抛出自定义的异常
         if (id > 100) {
