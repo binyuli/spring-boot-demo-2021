@@ -1,0 +1,16 @@
+server:
+  port: 8888
+db:
+  username: sa
+  pwd: 123
+
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      dll-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3307/demo?serverTimezone=GMT
+    username: root
+    password: ms0914
+    driver-class-name: com.mysql.jdbc.Driver
