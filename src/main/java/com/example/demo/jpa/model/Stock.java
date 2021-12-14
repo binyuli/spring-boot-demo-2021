@@ -5,6 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+    CREATE TABLE `stock` (
+    `ID` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(45) DEFAULT NULL,
+    `num` int(11) DEFAULT NULL,
+    `description` varchar(45) DEFAULT NULL,
+    PRIMARY KEY (`ID`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+ */
+
 @Entity
 @Table(name="Stock")
 public class Stock {

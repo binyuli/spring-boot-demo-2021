@@ -27,12 +27,12 @@ public class RestfulController {
             @ApiResponse(code=404,message="页面没找到"),
             @ApiResponse(code=500,message="服务错误")
     })
-    public HttpReturn getStockByID(@PathVariable Integer id) {
+    public HttpReturn<Stock> getStockByID(@PathVariable Integer id) {
         //如果id大于100，则抛出自定义的异常
         if (id > 100) {
             throw new ParamException(400, "Param id is more than 100");
         }
-        return new HttpReturn(HttpCodeEnum.OK, stockHM.get(id));
+        return new HttpReturn<>(HttpCodeEnum.OK, stockHM.get(id));
     }
 
     //返回所有的Stock
