@@ -59,4 +59,14 @@ public class Stock {
     public String getDescription() {
         return description;
     }
+
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", num=" + num +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

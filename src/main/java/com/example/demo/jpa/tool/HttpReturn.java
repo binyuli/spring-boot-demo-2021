@@ -40,12 +40,10 @@ public class HttpReturn<T> implements Serializable {
 
     @Override
     public String toString() {
-        return "HttpResult{" +
-                ", httpCode=" + httpCode +
-                ", httpMsg=" + httpMsg +
-                ", data='" + data + '\'' +
+        return "HttpReturn{" +
+                "httpCode=" + httpCode +
+                ", httpMsg='" + httpMsg + '\'' +
+                ", data=" + data +
                 '}';
     }
-
-
 }
