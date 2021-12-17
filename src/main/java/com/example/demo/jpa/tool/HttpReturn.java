@@ -1,13 +1,11 @@
-package com.example.demo.restful.tool;
+package com.example.demo.jpa.tool;
 
 import java.io.Serializable;
 
 public class HttpReturn<T> implements Serializable {
-    //http返回码
+
     private Integer httpCode;
-    //http返回码对应的信息
     private String httpMsg;
-    //返回的数据，用泛型定义
     private T data;
 
     public HttpReturn(HttpCodeEnum httpCodeEnum, T data) {

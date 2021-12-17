@@ -1,4 +1,4 @@
-package com.example.demo.restful;
+package com.example.demo.jpa;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo.restful.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.demo.jpa.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

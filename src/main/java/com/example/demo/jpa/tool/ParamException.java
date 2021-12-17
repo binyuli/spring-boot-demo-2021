@@ -1,10 +1,8 @@
-package com.example.demo.restful.exception;
+package com.example.demo.jpa.tool;
 
 public class ParamException extends RuntimeException {
 
-    //错误码，一般的http返回码对应
     private Integer errorCode;
-    //错误信息
     private String errorMsg;
 
     public ParamException(Integer errorCode, String errorMsg) {

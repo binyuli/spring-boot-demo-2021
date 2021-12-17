@@ -21,8 +21,7 @@ public class StockService {
         return stockRepo.findAll();
     }
 
-    public void delete(){
-        Stock delStock = stockRepo.getOne(10);
+    public void delete(Stock delStock){
         stockRepo.delete(delStock);
     }
 
@@ -30,19 +29,11 @@ public class StockService {
         stockRepo.deleteById(id);
     }
 
-    public Stock insertStock(){
-        Stock stock = new Stock();
-        stock.setID(11);
-        stock.setName("machine1");
-        stock.setNum(51);
-        stock.setDescription("Good");
-
+    public Stock insertStock(Stock stock){
         return stockRepo.save(stock);
     }
 
-    public Stock updateStock(){
-        Stock stock = stockRepo.getById(10);
-        stock.setNum(50);
+    public Stock updateStock(Stock stock){
         return stockRepo.save(stock);
     }
 

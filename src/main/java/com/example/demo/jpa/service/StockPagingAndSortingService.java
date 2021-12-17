@@ -17,13 +17,13 @@ public class StockPagingAndSortingService {
     @Autowired
     private StockPagingAndSortingRepo stockPagingAndSortingRepo;
 
-    public List<Stock> sortByName() {
-        Sort sort = Sort.by(Sort.Direction.DESC, "name");
+    public List<Stock> getStocksSortedByField(String sortByField) {
+        Sort sort = Sort.by(Sort.Direction.ASC, sortByField);
         return (List<Stock>) stockPagingAndSortingRepo.findAll(sort);
     }
 
-    public List<Stock> splitPage() {
-        Pageable pageable = PageRequest.of(0, 3);
+    public List<Stock> getStocksWithSplitPage(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
         Page<Stock> list = stockPagingAndSortingRepo.findAll(pageable);
         return list.getContent();
     }
