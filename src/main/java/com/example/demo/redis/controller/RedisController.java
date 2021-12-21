@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/redis")
 public class RedisController {
     @Autowired
     StudentService studentService;
 
-//    @PostMapping("/saveStudent")
-    @RequestMapping("/saveStudent")
-    public void saveStudent(){
+    @PostMapping("/saveStudent")
+    public void saveStudent() {
         Student newStudent = new Student();
         newStudent.setId("Student_001");
         newStudent.setName("Tim");
@@ -20,15 +20,13 @@ public class RedisController {
         studentService.saveStudent(newStudent);
     }
 
-//    @GetMapping("/findByID/{id}")
-    @RequestMapping("/findByID/{id}")
-    public Student findByID(@PathVariable String id){
+    @GetMapping("/findByID/{id}")
+    public Student findByID(@PathVariable String id) {
         return studentService.findByID(id);
     }
 
-//    @DeleteMapping("/deleteByID/{id}")
-    @RequestMapping("/deleteByID/{id}")
-    public void deleteByID(@PathVariable String id){
+    @DeleteMapping("/deleteByID/{id}")
+    public void deleteByID(@PathVariable String id) {
         studentService.deleteByID(id);
     }
 }
