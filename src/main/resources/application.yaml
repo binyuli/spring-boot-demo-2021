@@ -1,8 +1,5 @@
 server:
   port: 8888
-db:
-  username: sa
-  pwd: 123
 
 #docker run --name mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
 spring:

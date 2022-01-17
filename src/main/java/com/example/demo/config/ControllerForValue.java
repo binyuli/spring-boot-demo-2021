@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ControllerForValue {
 
-    @Value("${db.username}")
+    @Value("${spring.datasource.username}")
     private String username;
 
-    @Value("${db.pwd}")
+    @Value("${spring.datasource.password}")
     private String pwd;
 
     @RequestMapping("/getParamFromValue")
     public String getParamFromValue(){
-        return "db.username is:" + username + ", db.pwd is:" + pwd;
+        return "username is:" + username + ", pwd is:" + pwd;
     }
 }
