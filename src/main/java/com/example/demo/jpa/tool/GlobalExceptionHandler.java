@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
         return new HttpReturn<>(httpCodeEnum, e.getErrorMsg());
     }
 
-    @ExceptionHandler(Exception.class)
+//    @ExceptionHandler(Exception.class)
     public HttpReturn<String> handlerOtherException(Exception e) {
         HttpCodeEnum httpCodeEnum;
         httpCodeEnum = HttpCodeEnum.SERVER_ERROR;

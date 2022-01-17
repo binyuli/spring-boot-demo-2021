@@ -29,8 +29,18 @@ public class JpaController {
             @ApiResponse(code = 404, message = "page not found"),
             @ApiResponse(code = 500, message = "unknown server error")
     })
-    public HttpReturn<List<Stock>> getStockByName(@PathVariable String name) {
-        return new HttpReturn<>(HttpCodeEnum.OK, stockService.findByName(name));
+    public HttpReturn<List<Stock>> getStockByName(@PathVariable String name) throws Exception {
+        if ("error".equals(name)) {
+            throw new Exception("Param is error");
+        }
+
+        List<Stock> stockList = stockService.findByName(name);
+
+        if (stockList.size() == 0) {
+            throw new Exception("No Stock");
+        }
+
+        return new HttpReturn<>(HttpCodeEnum.OK, stockList);
     }
 
     @GetMapping("/stock/desc/{desc}")
